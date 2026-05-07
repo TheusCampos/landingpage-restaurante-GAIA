@@ -1,0 +1,13 @@
+/* Main Stylesheet Import */
+@import url('variables.css');
+@import url('global/reset.css');
+@import url('global/base.css');
+@import url('global/utilities.css');
+@import url('global/navigation.css');
+
+/* Pages / Partials */
+@import url('pages/partials/hero-section.css');
+@import url('pages/partials/about-section.css');
+@import url('pages/partials/services-section.css');
+@import url('pages/partials/experiences-section.css');
+@import url('pages/partials/contact-section.css');

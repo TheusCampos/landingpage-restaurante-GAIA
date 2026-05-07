@@ -1,0 +1,234 @@
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero__bg--desktop {
+    background: url('../../../imagens/banner_restaurante.png') center/cover no-repeat;
+}
+
+.hero__bg--mobile {
+    display: none;
+    background: url('../../../imagens/banner_restaurante-mobile.png') center/cover no-repeat;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 15, 15, 0.85) 0%,
+        rgba(15, 15, 15, 0.6) 40%,
+        rgba(15, 15, 15, 0.3) 100%
+    );
+    z-index: 0;
+}
+
+.hero__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-x);
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+}
+
+.hero__content {
+    max-width: 580px;
+    padding: 120px 0;
+}
+
+.hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 3vw, 5rem);  
+    line-height: 1;
+    margin-bottom: 18px;
+    color: var(--neutral-50);
+    letter-spacing: -0.02em;
+    font-weight: 300;
+}
+
+.hero__title span {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+}
+
+.hero__text {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 44px;
+    max-width: 480px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.hero__actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.hero__actions .btn {
+    border-color: var(--neutral-50);
+    color: var(--neutral-50);
+}
+
+.hero__actions .btn:hover {
+    background: var(--neutral-50);
+    color: var(--primary-color);
+}
+
+.hero__actions .btn--solid {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--neutral-900);
+}
+
+.hero__actions .btn--solid:hover {
+    background: transparent;
+    border-color: var(--neutral-50);
+    color: var(--neutral-50);
+}
+
+.hero__actions .btn--outline:hover {
+    background: var(--neutral-50);
+    color: var(--primary-color);
+}
+
+.hero__actions .btn--outline:hover::before {
+    left: 0;
+}
+
+.hero__deco {
+    position: absolute;
+    bottom: 40px;
+    left: var(--padding-x);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero__deco-line {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.hero__deco-text {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 1024px) {
+    .hero__content {
+        max-width: 500px;
+    }
+
+    .hero__title {
+        font-size: clamp(2.6rem, 4.5vw, 4rem);
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero__container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        min-height: 100vh;
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .hero__content {
+        max-width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero__title {
+        font-size: clamp(2.4rem, 8vw, 3.5rem);
+    }
+
+    .hero__text {
+        margin: 0 auto 36px;
+        font-size: 1rem;
+    }
+
+    .hero__actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero__bg--desktop {
+        display: none;
+    }
+
+    .hero__bg--mobile {
+        display: block;
+    }
+
+    .hero__overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(15, 15, 15, 0.7) 0%,
+            rgba(15, 15, 15, 0.5) 40%,
+            rgba(15, 15, 15, 0.8) 100%
+        );
+    }
+
+    .hero__deco {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .hero__title {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__bg--desktop,
+    .hero__bg--mobile {
+        transition: none;
+    }
+}

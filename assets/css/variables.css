@@ -1,0 +1,29 @@
+:root {
+    /* Cores Primárias */
+    --primary-color: #0f0f0f;
+    --primary-dark: #000000;
+    --primary-light: #2c2c2c;
+    
+    /* Cores Neutras */
+    --neutral-50: #ffffff;
+    --neutral-100: #f9f6f0;
+    --neutral-800: #1a1a1a;
+    --neutral-900: #0f0f0f;
+    
+    /* Cores Semânticas */
+    --gold: #bfa57d;
+    --text-light: #5a5a5a;
+    --border-color: #e5e0d8;
+    
+    /* Tipografia */
+    --font-display: 'Cinzel', serif;
+    --font-body: 'DM Sans', sans-serif;
+    
+    /* Layout */
+    --container-width: 1200px;
+    --padding-x: clamp(20px, 6vw, 120px);
+    
+    /* Animações */
+    --transition-smooth: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-fast: 0.3s ease;
+}

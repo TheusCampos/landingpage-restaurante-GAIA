@@ -1,0 +1,142 @@
+/* Header & Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    background: rgba(15, 15, 15, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.header--scrolled {
+    background: #0f0f0f;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.header--scrolled .header__inner {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    letter-spacing: 6px;
+    font-weight: 600;
+    color: var(--neutral-50);
+    text-decoration: none;
+    transition: color 0.5s ease, letter-spacing 0.3s ease;
+    order: 2;
+}
+
+.header--scrolled .logo {
+    color: var(--neutral-50);
+}
+
+.logo:hover {
+    letter-spacing: 8px;
+}
+
+.logo::after {
+    content: '.';
+    color: var(--gold);
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header__nav--left {
+    order: 1;
+}
+
+.header__nav--right {
+    order: 3;
+}
+
+.nav__link {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--neutral-50);
+    text-decoration: none;
+    font-weight: 400;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.5s ease;
+}
+
+.header--scrolled .nav__link {
+    color: var(--neutral-50);
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.4s ease;
+}
+
+.nav__link:hover::after {
+    width: 100%;
+}
+
+.nav__link--cta {
+    padding: 10px 24px;
+    border: 1px solid var(--neutral-50);
+    border-radius: 50px;
+    transition: 0.4s ease;
+}
+
+.nav__link--cta::after {
+    display: none;
+}
+
+.nav__link--cta:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--neutral-900);
+}
+
+.header--scrolled .nav__link--cta {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.header--scrolled .nav__link--cta:hover {
+    background: var(--gold);
+    color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+    .header__inner {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .logo {
+        order: 1;
+        font-size: 1.5rem;
+    }
+}
